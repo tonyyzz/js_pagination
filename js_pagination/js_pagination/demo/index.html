@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>pagination</title>
+	<link href="../src/yPagination.css" rel="stylesheet" />
+	<script src="../src/jquery.js"></script>
+	<script src="../src/yPagination.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.content {
+			width: 800px;
+			height: 250px;
+			margin: 50px auto;
+			background-color: #DCDCDC;
+			position: relative;
+		}
+
+		.pagination {
+			position: absolute;
+			width: 100%;
+			background-color: #ccc;
+			bottom: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div id="pagination" class="pagination"></div>
+	</div>
+	<script>
+		$(function () {
+			yPagination.html({
+				bindId: "pagination",	//必填（绑定的id）
+				pageCount: 19,	//必填（总页数）
+				pageIndex: 6,	//选填（当前页数）默认为1
+				callback: function (pageIndex) { //选填（点击页码按钮后的回调函数，pageIndex为当前点击的页码）如果不填，默认不执行操作
+					console.log(pageIndex);
+				},
+
+				homePageText: '首页',	//选填（显示的首页按钮文本）默认为'[首页]'
+				homePageShow: true,		//选填（首页按钮是否显示）默认为true
+				endPageText: '末页',		//选填（显示的末页按钮文本）默认为'[末页]'
+				endPageShow: true,		//选填（末页按钮是否显示）默认为true
+				prevText: 'Prev',		//选填（上一页按钮显示文本）默认为'[上一页]'
+				nextText: 'Next',		//选填（下一页按钮显示文本）默认为'[下一页]'
+				prevShow: true,			//选填（上一页按钮是否显示）默认为true
+				nextShow: true,			//选填（下一页按钮是否显示）默认为true
+				ellipseText: '...',		//选填（省略的页数用什么文字表示）默认为'...'
+				jumpShow: false,		//选填（跳转按钮选项是否显示）默认为true
+				maxNumDisplay: 5		//选填（连续分页主体部分显示的最大分页条目数）默认为10
+			})
+		})
+	</script>
+</body>
+</html>

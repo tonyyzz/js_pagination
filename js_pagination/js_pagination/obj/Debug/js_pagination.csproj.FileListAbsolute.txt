@@ -1,0 +1,6 @@
+E:\gitProject\js_pagination\js_pagination\js_pagination\bin\js_pagination.dll.config
+E:\gitProject\js_pagination\js_pagination\js_pagination\bin\js_pagination.dll
+E:\gitProject\js_pagination\js_pagination\js_pagination\bin\js_pagination.pdb
+E:\gitProject\js_pagination\js_pagination\js_pagination\obj\Debug\js_pagination.csprojResolveAssemblyReference.cache
+E:\gitProject\js_pagination\js_pagination\js_pagination\obj\Debug\js_pagination.dll
+E:\gitProject\js_pagination\js_pagination\js_pagination\obj\Debug\js_pagination.pdb
