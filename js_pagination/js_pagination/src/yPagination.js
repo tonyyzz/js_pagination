@@ -134,6 +134,7 @@
 			$bindjQObj.children(".jump").bind("click", function () {
 				var $that = $(this);
 				var pageIndex = $that.attr("data-pageIndex");
+				pageIndex = parseInt(pageIndex);
 				obj.callback(pageIndex);
 			});
 			$bindjQObj.children(".go").unbind("click");
@@ -148,6 +149,7 @@
 				} else if (pageIndex < 1) {
 					pageIndex = 1;
 				}
+				pageIndex = parseInt(pageIndex);
 				$(this).parent().children('input').val(pageIndex);
 				obj.callback(pageIndex);
 			});

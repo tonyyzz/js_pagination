@@ -35,12 +35,13 @@
 	</div>
 	<script>
 		$(function () {
-			yPagination.html({
+			var pageOption = {
 				bindId: "pagination",	//必填（绑定的id）
 				pageCount: 19,	//必填（总页数）
 				pageIndex: 6,	//选填（当前页数）默认为1
 				callback: function (pageIndex) { //选填（点击页码按钮后的回调函数，pageIndex为当前点击的页码）如果不填，默认不执行操作
 					console.log(pageIndex);
+					goThisPage(pageIndex);
 				},
 
 				homePageText: '首页',	//选填（显示的首页按钮文本）默认为'[首页]'
@@ -54,7 +55,17 @@
 				ellipseText: '...',		//选填（省略的页数用什么文字表示）默认为'...'
 				jumpShow: false,		//选填（跳转按钮选项是否显示）默认为true
 				maxNumDisplay: 5		//选填（连续分页主体部分显示的最大分页条目数）默认为10
-			})
+			};
+
+			yPagination.html(pageOption);
+
+			function goThisPage(pageIndex) {
+
+				//do something...
+
+				pageOption.pageIndex = pageIndex;
+				yPagination.html(pageOption);
+			}
 		})
 	</script>
 </body>
