@@ -19,19 +19,11 @@
 			background-color: #DCDCDC;
 			position: relative;
 		}
-
-		.pagination {
-			position: absolute;
-			width: 100%;
-			background-color: #ccc;
-			bottom: 0;
-			left: 0;
-		}
 	</style>
 </head>
 <body>
 	<div class="content">
-		<div id="pagination" class="pagination"></div>
+		<div id="pagination" style="width: 100%;"></div>
 	</div>
 	<script>
 		$(function () {
@@ -57,14 +49,38 @@
 				maxNumDisplay: 5		//选填（连续分页主体部分显示的最大分页条目数）默认为10
 			};
 
+			//（模拟）
 			yPagination.html(pageOption);
 
 			function goThisPage(pageIndex) {
 
-				//do something...
+				//do something...（一般为ajax请求）
+				//getAjaxInfo(pageIndex);
 
+				//（模拟）
 				pageOption.pageIndex = pageIndex;
 				yPagination.html(pageOption);
+			}
+
+
+			function getAjaxInfo(pageIndex) {
+				$.ajax({
+					url: "/Home/IndexAjax",
+					type: "post",
+					datatype: "json",
+					data: {
+						
+					},
+					success: function (resp) {
+						console.log(resp);
+
+						//刷新yPagination组件html（一般在ajax请求成功后加入该段代码）
+						pageOption.pageIndex = pageIndex;
+						yPagination.html(pageOption);
+
+					},
+				});
+
 			}
 		})
 	</script>
